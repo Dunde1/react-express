@@ -14,6 +14,7 @@ react & express boiler plate.
 - node : v14.18.0
 - `npx create-react-app client`
 - `express --no-view server`
+- server `npx sequelize init`
 
 ### 수정
 - `client` 환경설정 추가
@@ -28,7 +29,18 @@ react & express boiler plate.
     - `bin/www` 파일 port수정 (`3000 → 3001`)
     - `app.js` static 폴더 수정 (`public → build`)
 
-## 사용법
+- `database` 환경설정
+    - config 파일 프로젝트 최상단으로 경로 변경 (`/config/database_config.json`)
+        - `.gitignore` 추가
+
+    - `sequelize` 설정파일 추가 (`.sequelizerc`)
+        - `migrations`, `seeders`, `models` 경로 변경 (`/server/database`)
+
+---
+
+# 사용법
+
+## 개발
 
 ### front-end 테스트용
 
@@ -42,4 +54,11 @@ react & express boiler plate.
 - `server`에서 `npm start` 명령어를 통해 실행.
 - 서버에서 `"3001"` port를 통해 배포를 확인한다.
     - (선택) 포트 변경을 위해 `/server/bin/www` 파일의 port 번호를 수정한다.
+
+## 데이터베이스
+
+### sequelize seed 추가/삭제
+
+- `server`에서 `npm run add:seed` 명령어를 통해 데이터베이스에 시드 추가.
+- `server`에서 `npm run remove:seed` 명령어를 통해 데이터베이스에 시드 삭제.
     
