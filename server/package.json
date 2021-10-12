@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "start:clear": "set NODE_ENV=new Table&& node ./bin/www",
     "add:seed": "sequelize db:seed:all",
     "remove:seed": "sequelize db:seed:undo:all"
   },

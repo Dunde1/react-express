@@ -9,8 +9,9 @@ const indexRouter = require("./routes/index");
 
 const app = express();
 
-sequelize.sync({ force: true })
+sequelize.sync({ force: process.env.NODE_ENV === "new Table" })
     .then(() => {
+        console.log(process.env.NODE_ENV, process.env.NODE_ENV === "new Table");
         console.log("데이터베이스 연결 성공!");
     })
     .catch((err) => {

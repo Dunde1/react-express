@@ -61,4 +61,9 @@ react & express boiler plate.
 
 - `server`에서 `npm run add:seed` 명령어를 통해 데이터베이스에 시드 추가.
 - `server`에서 `npm run remove:seed` 명령어를 통해 데이터베이스에 시드 삭제.
+
+### table 초기화 사용 / table 일반 사용
+
+- `server`에서 `npm start` 명령어를 통해 일반사용.
+- `server`에서 `npm run start:clear` 명령어를 통해 table 초기화 후 사용.
     
