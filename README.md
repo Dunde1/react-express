@@ -45,7 +45,7 @@ react & express boiler plate.
 ### front-end 테스트용
 
 - `client`에서 `npm start` 명령어를 통해 실행.
-- `server`에서 `npm start` 명령어를 통해 실행.
+- `server`에서 `npm run start:react` 명령어를 통해 실행.
 - 브라우저에서 `"localhost:3000"` 접속을 통해 front-end 작업을 수행한다.
 
 ### 배포용
@@ -59,11 +59,13 @@ react & express boiler plate.
 
 ### sequelize seed 추가/삭제
 
-- `server`에서 `npm run add:seed` 명령어를 통해 데이터베이스에 시드 추가.
-- `server`에서 `npm run remove:seed` 명령어를 통해 데이터베이스에 시드 삭제.
+- `server`에서 `npm run seed:add` 명령어를 통해 데이터베이스에 시드 추가.
+- `server`에서 `npm run seed:remove` 명령어를 통해 데이터베이스에 시드 삭제.
 
 ### table 초기화 사용 / table 일반 사용
 
 - `server`에서 `npm start` 명령어를 통해 일반사용.
 - `server`에서 `npm run start:clear` 명령어를 통해 table 초기화 후 사용.
+    - (선택) `npm run start:react:clear` 명령어로 병합해서 사용가능.
+
     
