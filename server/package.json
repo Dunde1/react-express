@@ -4,8 +4,11 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "add:seed": "sequelize db:seed:all",
-    "remove:seed": "sequelize db:seed:undo:all"
+    "start:react": "set ROOT_ADDRESS=http://localhost:3000/&&node ./bin/www",
+    "start:clear": "set TABLE=clear&& node ./bin/www",
+    "start:react:clear": "set TABLE=clear&&set ROOT_ADDRESS=http://localhost:3000/&& node ./bin/www",
+    "seed:add": "sequelize db:seed:all",
+    "seed:remove": "sequelize db:seed:undo:all"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
