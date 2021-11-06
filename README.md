@@ -1,5 +1,6 @@
 # react-express
-react & express boiler plate.
+
+react & express boiler plate. (TypeScript ver)
 
 ---
 
@@ -8,64 +9,43 @@ react & express boiler plate.
 ## 이 프로젝트에 대하여
 
 ### 개요
+
 - 이 프로젝트는 react와 express를 사용하기 위해 만들어진 보일러 플레이트입니다.
+- TypeScript 버전입니다.
 
 ### 사용
-- node : v14.18.0
-- `npx create-react-app client`
-- `express --no-view server`
-- server `npx sequelize init`
+
+- node : v14.18.1 (21.11.06.)
+- `npx create-react-app client --template-typescript`
+- `npm i -g typescript`
 
 ### 수정
+
+- `server`
+
+  - `tsc --init` 사용으로 `tsconfig.json` 파일 생성.
+  - `tsconfig.json` 파일 수정
+
+    ````json
+    {
+      "compilerOptions": {
+        "lib": ["es5", "es6"],
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "esModuleInterop": true
+      }
+    }
+
+        ```
+    ````
+
 - `client` 환경설정 추가
-    - 최상위 경로에 `.env` 파일 추가
-        - build path를 server로 변경 (`/server/build`)
-
-    - `package.json` 수정
-        - `proxy: "http://localhost:3001"` 추가
-
-- `server` 파일 수정
-    - `public` 폴더 및 하위 파일 삭제
-    - `bin/www` 파일 port수정 (`3000 → 3001`)
-    - `app.js` static 폴더 수정 (`public → build`)
-
-- `database` 환경설정
-    - config 파일 프로젝트 최상단으로 경로 변경 (`/config/database_config.json`)
-        - `.gitignore` 추가
-
-    - `sequelize` 설정파일 추가 (`.sequelizerc`)
-        - `migrations`, `seeders`, `models` 경로 변경 (`/server/database`)
+  - `package.json` 수정
+    - `proxy: "http://localhost:3001"` 추가
 
 ---
-
-# 사용법
-
-## 개발
-
-### front-end 테스트용
-
-- `client`에서 `npm start` 명령어를 통해 실행.
-- `server`에서 `npm run start:react` 명령어를 통해 실행.
-- 브라우저에서 `"localhost:3000"` 접속을 통해 front-end 작업을 수행한다.
-
-### 배포용
-
-- `client`에서 `npm run build` 명령어를 통해 빌드.
-- `server`에서 `npm start` 명령어를 통해 실행.
-- 서버에서 `"3001"` port를 통해 배포를 확인한다.
-    - (선택) 포트 변경을 위해 `/server/bin/www` 파일의 port 번호를 수정한다.
-
-## 데이터베이스
-
-### sequelize seed 추가/삭제
-
-- `server`에서 `npm run seed:add` 명령어를 통해 데이터베이스에 시드 추가.
-- `server`에서 `npm run seed:remove` 명령어를 통해 데이터베이스에 시드 삭제.
-
-### table 초기화 사용 / table 일반 사용
-
-- `server`에서 `npm start` 명령어를 통해 일반사용.
-- `server`에서 `npm run start:clear` 명령어를 통해 table 초기화 후 사용.
-    - (선택) `npm run start:react:clear` 명령어로 병합해서 사용가능.
-
-    
