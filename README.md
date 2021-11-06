@@ -26,7 +26,7 @@ react & express boiler plate. (TypeScript ver)
   - `tsc --init` 사용으로 `tsconfig.json` 파일 생성.
   - `tsconfig.json` 파일 수정
 
-    ````json
+    ```json
     {
       "compilerOptions": {
         "lib": ["es5", "es6"],
@@ -40,9 +40,7 @@ react & express boiler plate. (TypeScript ver)
         "esModuleInterop": true
       }
     }
-
-        ```
-    ````
+    ```
 
 - `client` 환경설정 추가
   - `package.json` 수정
