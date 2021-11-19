@@ -5,6 +5,7 @@ import logger from "morgan";
 import indexRouter from "./routes/index";
 import debug from "debug";
 import http from "http";
+import { Server } from "socket.io";
 
 const debugServer = debug("server:server");
 
@@ -13,6 +14,21 @@ const app = express();
 const port = process.env.PORT || "3001";
 
 const server = http.createServer(app);
+
+const io = new Server(server, { cors: { origin: "*" } });
+
+io.on("connection", (socket) => {
+  console.log("connect", socket.id);
+
+  socket.on("log", (log) => {
+    console.log(log);
+    socket.emit("log", "server!");
+  });
+
+  socket.on("disconnect", () => {
+    console.log("disconnect", socket.id);
+  });
+});
 
 server.listen(port);
 
